@@ -1,11 +1,5 @@
 # React GraphQL Book List
 
-To install the dependencies
-
-```
-npm i
-```
-
 To run the page move to server directory first
 
 ```
