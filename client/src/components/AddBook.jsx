@@ -1,12 +1,13 @@
 import { useState } from 'react';
-import { useQuery } from '@apollo/client';
-import { getAuthorsQuery } from '../queries/queries';
+import { useQuery, useMutation } from '@apollo/client';
+import { getAuthorsQuery, addBookMutation } from '../queries/queries';
 
 const AddBook = () => {
   const [name, setName] = useState('');
   const [genre, setGenre] = useState('');
   const [authorId, setAuthorId] = useState('');
   const { data, error, loading } = useQuery(getAuthorsQuery);
+  const [addBook] = useMutation(addBookMutation);
 
   const updateBookName = (e) => setName(e.target.value);
 
@@ -17,7 +18,13 @@ const AddBook = () => {
   const submitForm = (e) => {
     e.preventDefault();
 
-    console.log({ name, genre, authorId });
+    addBook({
+      variables: {
+        name,
+        genre,
+        authorId,
+      },
+    });
   };
 
   if (error) {
