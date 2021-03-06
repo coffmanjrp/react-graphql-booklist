@@ -39,30 +39,32 @@ const AddBook = () => {
   return (
     <>
       <form className="add-book" onSubmit={submitForm}>
-        <div className="field">
-          <label>Book name:</label>
-          <input type="text" onChange={updateBookName} />
+        <div>
+          <div className="field">
+            <label>Book name:</label>
+            <input type="text" onChange={updateBookName} />
+          </div>
+          <div className="field">
+            <label>Genre:</label>
+            <input type="text" onChange={updateGenre} />
+          </div>
+          <div className="field">
+            <label>Author:</label>
+            <select onChange={updateAuthorId}>
+              <option>Select author</option>
+              {loading ? (
+                <option disabled>Loading Authors...</option>
+              ) : (
+                data.authors.map((author) => (
+                  <option key={author.id} value={author.id}>
+                    {author.name}
+                  </option>
+                ))
+              )}
+            </select>
+          </div>
+          <button>+</button>
         </div>
-        <div className="field">
-          <label>Genre:</label>
-          <input type="text" onChange={updateGenre} />
-        </div>
-        <div className="field">
-          <label>Author:</label>
-          <select onChange={updateAuthorId}>
-            <option>Select author</option>
-            {loading ? (
-              <option disabled>Loading Authors...</option>
-            ) : (
-              data.authors.map((author) => (
-                <option key={author.id} value={author.id}>
-                  {author.name}
-                </option>
-              ))
-            )}
-          </select>
-        </div>
-        <button>+</button>
       </form>
     </>
   );

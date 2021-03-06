@@ -47,8 +47,13 @@ form {
   left: 0;
   bottom: 0;
   padding: 20px;
-  width: 400px;
+  width: 100%;
   background-color: #fff;
+  z-index: -1;
+}
+
+form > div {
+  width: 400px;
 }
 
 form .field {
