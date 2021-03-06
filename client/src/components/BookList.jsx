@@ -20,8 +20,6 @@ const BookList = () => {
     console.log(error);
   }
 
-  console.log(data);
-
   return (
     <div>
       <ul className="book-list">
