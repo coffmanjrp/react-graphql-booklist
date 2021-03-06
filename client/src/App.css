@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
 
+:root {
+  --primary-color: #880e4f;
+}
+
 *,
 *::before,
 *::after {
@@ -15,4 +19,95 @@ body {
 
 li {
   list-style-type: none;
+}
+
+.main {
+  width: 60%;
+  height: 100%;
+}
+
+.main h1 {
+  color: #444;
+  text-align: center;
+}
+
+.book-list li {
+  display: inline-block;
+  margin: 12px;
+  padding: 10px;
+  border: 1px solid var(--primary-color);
+  border-radius: 4px;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+form {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  padding: 20px;
+  width: 400px;
+  background-color: #fff;
+}
+
+form .field {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+form label {
+  padding: 6px;
+  text-align: right;
+}
+
+form select,
+form input {
+  margin: 4px;
+  padding: 6px;
+}
+
+form button {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  padding: 0 10px;
+  background-color: #ad1457;
+  border: none;
+  border-radius: 50%;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.book-details {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 30px;
+  width: 40%;
+  height: 100%;
+  background-color: var(--primary-color);
+  box-shadow: -2px -3px 5px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  overflow: auto;
+}
+
+.book-details h2 {
+  margin-bottom: 1rem;
+}
+
+.book-details h4 {
+  margin: 1rem 0;
+}
+
+.book-details p {
+  margin-bottom: 10px;
+}
+
+.book-details li {
+  margin-left: 1.5rem;
+  padding-left: 0.1rem;
+  list-style-type: initial;
 }
