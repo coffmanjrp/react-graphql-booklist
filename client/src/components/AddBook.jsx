@@ -1,8 +1,24 @@
+import { useState } from 'react';
 import { useQuery } from '@apollo/client';
 import { getAuthorsQuery } from '../queries/queries';
 
 const AddBook = () => {
+  const [name, setName] = useState('');
+  const [genre, setGenre] = useState('');
+  const [authorId, setAuthorId] = useState('');
   const { data, error, loading } = useQuery(getAuthorsQuery);
+
+  const updateBookName = (e) => setName(e.target.value);
+
+  const updateGenre = (e) => setGenre(e.target.value);
+
+  const updateAuthorId = (e) => setAuthorId(e.target.value);
+
+  const submitForm = (e) => {
+    e.preventDefault();
+
+    console.log({ name, genre, authorId });
+  };
 
   if (error) {
     console.log(error);
@@ -10,18 +26,18 @@ const AddBook = () => {
 
   return (
     <>
-      <form className="add-book">
+      <form className="add-book" onSubmit={submitForm}>
         <div className="field">
           <label>Book name:</label>
-          <input type="text" />
+          <input type="text" onChange={updateBookName} />
         </div>
         <div className="field">
           <label>Genre:</label>
-          <input type="text" />
+          <input type="text" onChange={updateGenre} />
         </div>
         <div className="field">
           <label>Author:</label>
-          <select>
+          <select onChange={updateAuthorId}>
             <option>Select author</option>
             {loading ? (
               <option disabled>Loading Authors...</option>
