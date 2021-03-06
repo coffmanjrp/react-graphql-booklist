@@ -13,7 +13,7 @@ mongoose.connect(process.env.DB_CONNECT_PATH, {
   useUnifiedTopology: true,
 });
 mongoose.connection.once('open', () => {
-  console.log('connected to database'.green.bold);
+  console.log('connected to database'.cyan.bold);
 });
 
 app.use(
