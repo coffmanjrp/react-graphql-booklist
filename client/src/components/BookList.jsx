@@ -25,7 +25,9 @@ const BookList = () => {
   return (
     <div>
       <ul className="book-list">
-        <li>Book name</li>
+        {data.books.map((book) => (
+          <li key={book.id}>{book.name}</li>
+        ))}
       </ul>
     </div>
   );

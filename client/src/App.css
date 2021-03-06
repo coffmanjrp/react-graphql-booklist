@@ -12,3 +12,7 @@ body {
   background-color: #eee;
   font-family: 'Nunito', sans-serif;
 }
+
+li {
+  list-style-type: none;
+}
