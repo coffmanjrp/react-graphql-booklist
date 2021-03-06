@@ -7,7 +7,11 @@ const BookDetail = ({ bookId }) => {
   });
 
   if (loading) {
-    return <h4>Loading...</h4>;
+    return (
+      <div className="book-details">
+        <h4>Loading...</h4>
+      </div>
+    );
   }
 
   if (error) {
